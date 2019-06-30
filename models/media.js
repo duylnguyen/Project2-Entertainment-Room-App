@@ -9,7 +9,7 @@
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const mongoose = require('./connection.js')
+const mongoose = require('./connection.js')
 
 /* Step 1 alternative
  *
@@ -18,7 +18,6 @@
  * your data once you stop running your server.
  *
  */
-global.sampleModel = [];
 
 /* Step 2
  *
@@ -26,9 +25,28 @@ global.sampleModel = [];
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const SampleModelSchema = new mongoose.Schema({
-//  name: String
-//})
+const MediaSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  year: {
+    type: Number,
+    required: true
+  },
+  genre: {
+    type: String,
+    default: ''
+  },
+  review: {
+    type: String,
+    required: true
+  }
+})
 
 /* Step 3
  *
@@ -36,15 +54,19 @@ global.sampleModel = [];
  * NOTE: skip this if you are not using mongoose
  *
  */
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
+const MediaCollection = mongoose.model('Media', MediaSchema)
 
 /* Step 4
  *
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getMedia() {
+  return MediaCollection.find()
+}
+
+function addMedia(movie) {
+  return MediaCollection.create(movie)
 }
 
 /* Step 5
@@ -53,5 +75,6 @@ function getHelloWorldString() {
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getMedia,
+  addMedia
 }

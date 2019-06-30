@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateApi = require('../models/template.js')
+const mediaApi = require('../models/media.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const templateApi = require('../models/template.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const mediaRouter = express.Router()
 
 /* Step 4
  * 
@@ -36,9 +36,30 @@ const templateRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-templateRouter.get('/', (req, res) => {
-  res.send(templateApi.getHelloWorldString())
+mediaRouter.get('/', (req, res) => {
+  mediaApi.getMedia()
+    .then((media) => {
+      res.render('media/media', {media})
+    })
+    .catch ((err) => {
+      res.send(err)
+    })
 })
+
+mediaRouter.get('/new', (req, res) => {
+  res.render('media/newMediaForm')
+})
+
+mediaRouter.post('/', (req, res) => {
+  mediaApi.addMedia(req.body)
+    .then(() => {
+      res.redirect('/media')
+    })
+    .catch ((err) => {
+      res.send(err)
+    })
+})
+
 
 /* Step 6
  *
@@ -46,5 +67,5 @@ templateRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  templateRouter
+  mediaRouter
 }
