@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const mediaApi = require('../models/media.js')
+const movieApi = require('../models/movie.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const mediaApi = require('../models/media.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const mediaRouter = express.Router()
+const movieRouter = express.Router()
 
 /* Step 4
  * 
@@ -36,29 +36,40 @@ const mediaRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-mediaRouter.get('/', (req, res) => {
-  mediaApi.getMedia()
-    .then((media) => {
-      res.render('media/media', {media})
+movieRouter.get('/', (req, res) => {
+  movieApi.getAllMovies()
+    .then((movies) => {
+      res.render('movies/movies', {movies})
     })
     .catch ((err) => {
       res.send(err)
     })
 })
 
-mediaRouter.get('/new', (req, res) => {
-  res.render('media/newMediaForm')
+movieRouter.get('/new', (req, res) => {
+  res.render('movies/newMovieForm')
 })
 
-mediaRouter.post('/', (req, res) => {
-  mediaApi.addMedia(req.body)
+movieRouter.post('/', (req, res) => {
+  movieApi.addMovie(req.body)
     .then(() => {
-      res.redirect('/media')
+      res.redirect('/movies')
     })
     .catch ((err) => {
       res.send(err)
     })
 })
+
+movieRouter.get('/:movieId', (req, res) => {
+  movieApi.getMovie(req.params.movieId)
+    .then((movie) => {
+      res.render('movies/movie', {movie})
+    })
+    .catch ((err) => {
+      res.send(err)
+    })
+})
+
 
 
 /* Step 6
@@ -67,5 +78,5 @@ mediaRouter.post('/', (req, res) => {
  *
  */
 module.exports = {
-  mediaRouter
+  movieRouter
 }

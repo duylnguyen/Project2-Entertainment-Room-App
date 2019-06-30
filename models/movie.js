@@ -25,7 +25,7 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const MediaSchema = new mongoose.Schema({
+const MovieSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true
@@ -35,7 +35,7 @@ const MediaSchema = new mongoose.Schema({
     required: true
   },
   year: {
-    type: Number,
+    type: String,
     required: true
   },
   genre: {
@@ -54,20 +54,32 @@ const MediaSchema = new mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const MediaCollection = mongoose.model('Media', MediaSchema)
+const MovieCollection = mongoose.model('Movie', MovieSchema)
 
 /* Step 4
  *
  * TODO: delete this it's just a sample
  *
  */
-function getMedia() {
-  return MediaCollection.find()
+function getAllMovies() {
+  return MovieCollection.find()
 }
 
-function addMedia(movie) {
-  return MediaCollection.create(movie)
+function addMovie(movie) {
+  return MovieCollection.create(movie)
 }
+
+function getMovie(movieId) {
+  return MovieCollection.findById(movieId)
+}
+
+// function updateMovie(movieId, movieObject) {
+//   return MovieCollection.findByIdAndUpdate(movieId, movieObject)
+// }
+
+// function deleteMovie(movieId) {
+//   return MovieCollection.findByIdAndDelete(movieId)
+// }
 
 /* Step 5
  *
@@ -75,6 +87,9 @@ function addMedia(movie) {
  * object
  */
 module.exports = {
-  getMedia,
-  addMedia
+  getAllMovies,
+  addMovie,
+  getMovie
+  // updateMovie,
+  // deleteMovie
 }
