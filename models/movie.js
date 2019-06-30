@@ -73,13 +73,13 @@ function getMovie(movieId) {
   return MovieCollection.findById(movieId)
 }
 
-// function updateMovie(movieId, movieObject) {
-//   return MovieCollection.findByIdAndUpdate(movieId, movieObject)
-// }
+function updateMovie(movieId, movieObject) {
+  return MovieCollection.findByIdAndUpdate(movieId, movieObject)
+}
 
-// function deleteMovie(movieId) {
-//   return MovieCollection.findByIdAndDelete(movieId)
-// }
+function deleteMovie(movieId) {
+  return MovieCollection.findByIdAndDelete(movieId)
+}
 
 /* Step 5
  *
@@ -89,7 +89,7 @@ function getMovie(movieId) {
 module.exports = {
   getAllMovies,
   addMovie,
-  getMovie
-  // updateMovie,
-  // deleteMovie
+  getMovie,
+  updateMovie,
+  deleteMovie
 }

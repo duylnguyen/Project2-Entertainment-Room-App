@@ -70,6 +70,25 @@ movieRouter.get('/:movieId', (req, res) => {
     })
 })
 
+movieRouter.get('/:movieId/edit', (req, res) => {
+  movieApi.getMovie(req.params.movieId)
+    .then((movie) => {
+      res.render('movies/editMovieForm', {movie})
+    })
+    .catch ((err) => {
+      res.send(err)
+    })
+})
+
+movieRouter.put('/:movieId', (req, res) => {
+  movieApi.updateMovie(req.params.movieId, req.body)
+    .then(() => {
+      res.redirect('/movies')
+    })
+    .catch ((err) => {
+      res.send(err)
+    })
+})
 
 
 /* Step 6
