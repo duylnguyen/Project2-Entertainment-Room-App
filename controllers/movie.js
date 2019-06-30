@@ -90,6 +90,16 @@ movieRouter.put('/:movieId', (req, res) => {
     })
 })
 
+movieRouter.delete('/:movieId', (req, res) => {
+  movieApi.deleteMovie(req.params.movieId)
+    .then(() => {
+      res.redirect('/movies')
+    })
+    .catch ((err) => {
+      res.send(err)
+    })
+})
+
 
 /* Step 6
  *
