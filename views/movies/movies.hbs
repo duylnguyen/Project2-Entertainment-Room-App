@@ -1,13 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/movies">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Movies</a>
+      <a class="nav-item nav-link" href="#">Musics</a>
+      <a class="nav-item nav-link" href="#">Books</a>
+    </div>
+  </div>
+</nav>
+
+
 <h1>Movies Content</h1>
 
 {{#each movies}}
-    <div>
-        <p>Type of media: {{type}}</p>
-        <p>Title: {{title}}</p>
-        <p>Title:<a href="/movies/{{_id}}"> {{title}}</a></p>
-        <p>Year: {{year}}</p>
-        <p>Genre: {{genre}}</p>
-        <p>Review: {{review}}</p>
+    <div class="movie">
+        <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
+        <div class"content">
+            <h3>Title:<a href="/movies/{{_id}}"> {{title}}</a></h3>
+            <p>Rating: {{rating}}</p>
+            <p>Review: {{review}}</p>
+        </div>
+    </div>
+    <div class="comment">
+        <button>Comments</button>
     </div>
 {{/each}}
 

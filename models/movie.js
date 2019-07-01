@@ -34,18 +34,15 @@ const MovieSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  year: {
-    type: String,
-    required: true
-  },
-  genre: {
-    type: String,
-    default: ''
+  rating: {
+    type: Number,
+    default: 0
   },
   review: {
     type: String,
     required: true
-  }
+  },
+  imgLink: String,
 })
 
 /* Step 3

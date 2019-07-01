@@ -1,0 +1,40 @@
+body {
+    font-size: 100%;
+    line-height: 1.4;
+    background-color: #eaeaea;
+}
+
+h1, h3 {
+    font-weight: 900;
+}
+
+h1 {
+    margin: 30px auto;
+    text-align: center;
+    color: #505961;
+}
+
+.movie {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    background-color: #fff;
+    width: 70%;
+    height: 180px;
+    margin: 15px auto;
+}
+
+.movie img {
+    float: left;
+    margin-right: 20px;
+    width: 20%;
+    height: 20%;
+}
+
+.comment {
+    margin-left: 15%;
+}
+
+
+
+
