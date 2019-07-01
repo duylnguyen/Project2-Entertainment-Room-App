@@ -1,3 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/movies">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Movies</a>
+      <a class="nav-item nav-link" href="#">Musics</a>
+      <a class="nav-item nav-link" href="#">Books</a>
+      <a class="nav-item nav-link" href="/movies/new">Post New Review</a>
+    </div>
+  </div>
+</nav>
+
 <h2>Create New Movie Review</h2>
 
 <form method="POST" action="/movies">
@@ -22,7 +34,6 @@
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Image Link" name="imgLink" id="img-link"/>
   </div>
   <input id="submitBtn" type="submit" value="Create Movie Review" />
-  
 </form>
 
 {{!-- <form method="POST" action="/movies">
