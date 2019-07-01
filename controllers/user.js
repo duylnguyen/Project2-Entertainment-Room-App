@@ -28,6 +28,16 @@ userRouter.post('/', (req, res) => {
         })
 })
 
+userRouter.get('/:userId', (req, res) => {
+    userApi.getUser(req.params.userId)
+        .then((user) => {
+            res.render('users/user')
+        })
+        .catch((err) => {
+            res.send(err)
+        })
+})
+
 module.exports = {
     userRouter
 }
