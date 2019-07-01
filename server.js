@@ -19,7 +19,7 @@ const methodOverride = require('method-override')
  */
 const { movieRouter } = require('./controllers/movie.js')
 const { userRouter } = require('./controllers/user.js')
-
+const { commentRouter } = require('./controllers/comment.js')
 
 /* Step 3
  *
@@ -64,6 +64,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/movies', movieRouter)
 app.use('/users', userRouter)
+app.use('/comments', commentRouter)
 
 /* Step 5
  *
