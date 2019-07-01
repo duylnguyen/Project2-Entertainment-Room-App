@@ -1,5 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/comments">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Movies</a>
+      <a class="nav-item nav-link" href="#">Musics</a>
+      <a class="nav-item nav-link" href="#">Books</a>
+      <a class="nav-item nav-link" href="/moviess/new">Post New Review</a>
+      <a class="nav-item nav-link" href="/users/new">Create New Account</a>
+    </div>
+  </div>
+</nav>
+
 {{#each comments}}
         <div class"content">
-            <p>Comment: {{comment}}</p>
+            <p><a href="/comments/{{_id}}">Comment:</a>{{comment}}</p>
         </div>
 {{/each}}
+
+<a href="/comments/new">Create New Comment</a>

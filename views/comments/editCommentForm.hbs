@@ -1,0 +1,8 @@
+<form method="POST" action="/comments/{{comment._id}}?_method=PUT">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Comments</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Comments" name="comment" value="{{comment.comment}}" />
+  </div>
+
+  <input id="submitBtn" type="submit" value="Edit Comment" />
+</form>

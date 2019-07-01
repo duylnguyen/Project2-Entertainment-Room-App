@@ -40,8 +40,8 @@ commentRouter.get('/:commentId', (req, res) => {
 
 commentRouter.get('/:commentId/edit', (req, res) => {
     commentApi.getComment(req.params.commentId)
-        .then((user) => {
-            res.render('comments/editCommentForm', {user})
+        .then((comment) => {
+            res.render('comments/editCommentForm', {comment})
         })
         .catch ((err) => {
             res.send(err)
