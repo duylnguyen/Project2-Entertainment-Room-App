@@ -38,6 +38,36 @@ userRouter.get('/:userId', (req, res) => {
         })
 })
 
+userRouter.get('/:userId/edit', (req, res) => {
+    userApi.getUser(req.params.userId)
+        .then((user) => {
+            res.render('users/editUserForm', {user})
+        })
+        .catch ((err) => {
+            res.send(err)
+        })
+})
+
+userRouter.put('/:userId', (req, res) => {
+    userApi.updateUser(req.params.userId, req.body)
+        .then(() => {
+            res.redirect('/users')
+        })
+        .catch ((err) => {
+            res.send(err)
+        })
+})
+
+userRouter.delete('/:userId', (req, res) => {
+    userApi.deleteUser(req.params.userId)
+        .then(() => {
+            res.redirect('/users')
+        })
+        .catch ((err) => {
+            res.send(err)
+        })
+})
+
 module.exports = {
     userRouter
 }
