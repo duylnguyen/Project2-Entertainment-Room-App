@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/users">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Movies</a>
+      <a class="nav-item nav-link" href="#">Musics</a>
+      <a class="nav-item nav-link" href="#">Books</a>
+      <a class="nav-item nav-link" href="/users/new">Create New Account</a>
+    </div>
+  </div>
+</nav>
+
+<h2>User Name: {{user.userName}}</h2>
+
+<div>
+    <p>First Name: {{user.firstName}}</p>
+    <p>Last Name: {{user.lastName}}</p>
+    <p>Account created at: {{user.createdDate}}</p>
+</div>
+
+<a href="/users/{{user._id}}/edit">Edit User Post</a>
