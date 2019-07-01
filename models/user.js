@@ -1,10 +1,10 @@
-const mogoose = require('./connection.js')
+const mongoose = require('./connection.js')
 
 const UserSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    }
+    userName: { type: String, unique: true, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    createdDate: { type: Date, default: Date.now }
 })
 
 const UserCollection = mongoose.model('User', UserSchema)
