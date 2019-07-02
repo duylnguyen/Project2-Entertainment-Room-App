@@ -1,0 +1,27 @@
+
+<h2>User Name: {{user.userName}}</h2>
+
+<div>
+    <p>First Name: {{user.firstName}}</p>
+    <p>Last Name: {{user.lastName}}</p>
+    <p>Account created at: {{user.createdDate}}</p>
+    <p>user ID: {{media.userId}}</p>
+</div>
+
+<h2>Media Content</h2>
+
+<div>
+    <p>media id : {{media._id}}</p>
+    <p>Type of media: {{media.type}}</p>
+    <p>Title: {{media.title}}</p>
+    <p>Rating: {{media.rating}}</p>
+    <p>Review: {{media.review}}</p>
+    <p>{{media.userId}}</p>
+    <img src="{{media.imgLink}}" alt="Image of {{movie.title}}">
+</div>
+
+<a href="/medias/{{media._id}}/edit">Edit media post</a>
+
+<form action="/medias/{{media._id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete Media">
+</form>

@@ -1,6 +1,7 @@
 const express = require('express')
 
 const userApi = require('../models/user.js')
+const mediaApi = require('../models/media.js')
 
 const userRouter = express.Router()
 
@@ -28,10 +29,23 @@ userRouter.post('/', (req, res) => {
         })
 })
 
+// userRouter.get('/:userId', (req, res) => {
+//     userApi.getUser(req.params.userId)
+//         .then((user) => {
+//             res.render('users/user', {user})
+//         })
+//         .catch((err) => {
+//             res.send(err)
+//         })
+// })
+
 userRouter.get('/:userId', (req, res) => {
     userApi.getUser(req.params.userId)
         .then((user) => {
-            res.render('users/user', {user})
+            mediaApi.getMediaByUserId(user._id)
+                .then((media) => {
+                    res.render('media/singleMedia', {user: user, media: media})
+                })
         })
         .catch((err) => {
             res.send(err)

@@ -2,7 +2,7 @@
 
 <h2>Create New Media Review</h2>
 
-<form method="POST" action="/movies">
+<form method="POST" action="/users/{{user._id}}/media">
   <div class="form-group">
     <label for="formGroupExampleInput">Type of media</label>
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type of media" name="type" />
@@ -25,19 +25,3 @@
   </div>
   <input id="submitBtn" type="submit" value="Create Review" />
 </form>
-
-{{!-- <form method="POST" action="/movies">
-
-  <input type="text" placeholder="Type of media" name="type" />
-
-  <input type="text" placeholder="Title "name="title" />
-
-  <input type="text" placeholder="Rating" name="rating" />
-
-  <input type="text" placeholder="Review" name="review" />
-
-  <input type="text" name="imgLink" id="img-link"/>
-
-  <input type="submit" value="Create Movie Review" />
-  
-</form> --}}

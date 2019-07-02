@@ -36,7 +36,9 @@ const MovieSchema = new mongoose.Schema({
   },
   rating: {
     type: Number,
-    default: 0
+    default: 0,
+    min: 0,
+    max: 5
   },
   review: {
     type: String,

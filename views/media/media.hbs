@@ -1,12 +1,13 @@
 
 
-<h1>Movies Content</h1>
+<h1>Media Reviews</h1>
 
-{{#each movies}}
-    <div class="movie">
+{{#each media}}
+    <div class="media">
         <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
         <div class"content">
-            <h3>Title:<a href="/movies/{{_id}}"> {{title}}</a></h3>
+            <h3>Title:<a href="/users/{{userId}}/media/{{_id}}"> {{title}}</a></h3>
+            <p>Type: {{type}}</p>
             <p>Rating: {{rating}}</p>
             <p>Review: {{review}}</p>
         </div>
@@ -15,4 +16,3 @@
         <button>Comments</button>
     </div>
 {{/each}}
-
