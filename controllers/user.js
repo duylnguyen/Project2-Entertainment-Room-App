@@ -1,8 +1,5 @@
 const express = require('express')
-
 const userApi = require('../models/user.js')
-const mediaApi = require('../models/media.js')
-
 const userRouter = express.Router()
 
 userRouter.get('/', (req, res) => {

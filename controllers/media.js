@@ -29,6 +29,13 @@ const mediaRouter = express.Router({mergeParams: true})
         
 // })
 
+// mediaRouter.get('/', (req, res) => {
+//     mediaApi.getAllMedia(req.params.mediaId)
+//         .then((media) => {
+//             res.render('media/media', {media})
+//         })
+// })
+
 mediaRouter.get('/', (req, res) => {
     userApi.getUser(req.params.userId)
         .then((user) => {

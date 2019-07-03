@@ -1,25 +1,14 @@
-/* 
- * This is the template for a server.js file.  Follow the steps below and read
- * the comments for creating your own (or you can just copy this file).
- */
-
-/* Step 1
- *
- * Import needed packages
- *
- */
+// Import needed packages
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 
-/* Step 2
- * 
- * import routers from controllers/
- *
- */
+
+// import routers from controllers/
 const { userRouter } = require('./controllers/user.js')
 const { commentRouter } = require('./controllers/comment.js')
 const { mediaRouter } = require('./controllers/media.js')
+const { homeRouter } = require('./controllers/home.js')
 
 /* Step 3
  *
@@ -62,6 +51,7 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+app.use('/media', homeRouter)
 app.use('/users', userRouter)
 app.use('/media/:mediaId/comments', commentRouter)
 app.use('/users/:userId/media', mediaRouter)
