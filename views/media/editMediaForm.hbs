@@ -1,6 +1,6 @@
 <h2>Edit Review Form</h2>
 
-<form method="POST" action="/media/{{media._id}}?_method=PUT">
+<form method="POST" action="/users/{{user._id}}/media/{{media._id}}?_method=PUT">
   <div class="form-group">
     <label for="formGroupExampleInput">Type of media</label>
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type of media" name="type" value="{{media.type}}" />

@@ -77,9 +77,10 @@ mediaRouter.get('/:mediaId/edit', (req, res) => {
 })
 
 mediaRouter.put('/:mediaId', (req, res) => {
-  mediaApi.updateMedia(req.params.mediaId, req.body)
-    .then(() => {
-      res.redirect('/media')
+    req.body.userId = req.params.userId
+        mediaApi.updateMedia(req.params.mediaId, req.body)
+            .then(() => {
+                res.redirect(`/users/${req.params.userId}/media`)
     })
     .catch ((err) => {
       res.send(err)
