@@ -35,12 +35,11 @@ mediaRouter.get('/', (req, res) => {
             mediaApi.getMediaByUserId(user._id)
                 .then((media) => {
                     res.render('media/media', {user, media})
-                })
-                .catch ((err) => {
-                    res.send(err)
                 })  
         })
-        
+        .catch ((err) => {
+            res.send(err)
+        }) 
 })
 
 mediaRouter.get('/new', (req, res) => {
@@ -71,9 +70,9 @@ mediaRouter.get('/:mediaId', (req, res) => {
                 .then((media) => {
                     res.render('media/singleMedia', {user, media})
                 })
-                .catch ((err) => {
-                    res.send(err)
-                })
+        })
+        .catch ((err) => {
+            res.send(err)
         })
 })
 

@@ -10,7 +10,7 @@
 
 <h2>Media Content</h2>
 
-<div>
+{{!-- <div>
     <p>media id : {{media._id}}</p>
     <p>Type of media: {{media.type}}</p>
     <p>Title: {{media.title}}</p>
@@ -18,7 +18,27 @@
     <p>Review: {{media.review}}</p>
     <p>{{media.userId}}</p>
     <img src="{{media.imgLink}}" alt="Image of {{movie.title}}">
+</div> --}}
+
+<div class="media">
+    <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
+    <div class"content">
+        <h3>Title: {{media.title}}</h3>
+        <p>Type: {{media.type}}</p>
+        <p>Rating: {{media.rating}}</p>
+        <p>Review: {{media.review}}</p>
+    </div>
 </div>
+
+{{#each comments}}
+<div class="comments">
+    <p>{{comments}}</p>
+</div>
+{{/each}}
+
+    <div class="comment">
+        <button><a href="/media/{{media._id}}/comments/new">Post A Comment</a></button>
+    </div>
 
 <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
 

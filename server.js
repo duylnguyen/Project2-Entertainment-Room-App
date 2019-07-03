@@ -17,7 +17,6 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { movieRouter } = require('./controllers/movie.js')
 const { userRouter } = require('./controllers/user.js')
 const { commentRouter } = require('./controllers/comment.js')
 const { mediaRouter } = require('./controllers/media.js')
@@ -63,10 +62,8 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/movies', movieRouter)
 app.use('/users', userRouter)
-app.use('/comments', commentRouter)
-// app.use('/media', mediaRouter)
+app.use('/media/:mediaId/comments', commentRouter)
 app.use('/users/:userId/media', mediaRouter)
 
 /* Step 5

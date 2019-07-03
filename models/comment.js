@@ -4,6 +4,9 @@ const CommentSchema = new mongoose.Schema({
     comment: {
         type: String,
         required: true
+    },
+    mediaId: {
+        type: mongoose.Types.ObjectId
     }
 })
 
@@ -27,6 +30,10 @@ function updateComment(commentId, commentObject) {
 
 function deleteComment(commentId) {
     return CommentCollection.findByIdAndDelete(commentId)
+}
+
+function getCommentByMedia(mediaId) {
+    return CommentCollection.find({mediaId: mediaId})
 }
 
 module.exports = {

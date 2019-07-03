@@ -1,13 +1,17 @@
 const express = require('express')
 
 const commentApi = require('../models/comment.js')
+const mediaApi = require('../models/media.js')
 
-const commentRouter = express.Router()
+const commentRouter = express.Router({mergeParams: true})
 
 commentRouter.get('/', (req, res) => {
-    commentApi.getAllComments() 
-        .then((comments) => {
-            res.render('comments/comments', {comments})
+    mediaApi.getMedia(req.params.mediaId)
+        .then((media) => {
+            commentApi.getAllComments()
+                .then((comments) => {
+                    res.render('comments/comments', {media, comments})
+                }) 
         })
         .catch((err) => {
             res.send(err)
@@ -15,7 +19,13 @@ commentRouter.get('/', (req, res) => {
 })
 
 commentRouter.get('/new', (req, res) => {
-    res.render('comments/newCommentForm')
+    mediaApi.getMedia(req.params.mediaId)
+        .then((media) => {
+        res.render('comments/newCommentForm', {media})
+        })
+        .catch((err) => {
+            res.send(err)
+        })
 })
 
 commentRouter.post('/', (req, res) => {
