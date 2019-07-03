@@ -29,19 +29,23 @@ commentRouter.get('/new', (req, res) => {
 })
 
 commentRouter.post('/', (req, res) => {
-    commentApi.addComment(req.body)
-        .then(() => {
-            res.redirect('/comments')
-        })
-        .catch((err) => {
-            res.send(err)
-        })
+    req.body.mediaId = req.params.mediaId
+        commentApi.addComment(req.body)
+            .then(() => {
+                res.redirect(`/media/${req.params.mediaId}/comments`)
+            })
+            .catch((err) => {
+                res.send(err)
+            })
 })
 
 commentRouter.get('/:commentId', (req, res) => {
-    commentApi.getComment(req.params.commentId)
-        .then((comment) => {
-            res.render('comments/comment', {comment})
+    mediaApi.getMedia(req.params.mediaId)
+        .then((media) => {
+            commentApi.getComment(req.params.commentId)
+                .then((comment) => {
+                    res.render('comments/comment', {media, comment})
+                })
         })
         .catch((err) => {
             res.send(err)

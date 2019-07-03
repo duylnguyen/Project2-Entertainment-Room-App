@@ -30,14 +30,8 @@
     </div>
 </div>
 
-{{#each comments}}
-<div class="comments">
-    <p>{{comments}}</p>
-</div>
-{{/each}}
-
     <div class="comment">
-        <button><a href="/media/{{media._id}}/comments/new">Post A Comment</a></button>
+        <button><a href="/media/{{media._id}}/comments">Views Comments</a></button>
     </div>
 
 <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
@@ -45,3 +39,5 @@
 <form action="/users/{{user._id}}/media/{{media._id}}?_method=DELETE" method="post">
     <input type="submit" value="Delete Media">
 </form>
+
+    

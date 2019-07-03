@@ -42,6 +42,14 @@ mediaRouter.get('/', (req, res) => {
         }) 
 })
 
+// mediaRouter.get('/', async(req, res) => {
+//     const user = await userApi.getUser(req.params.userId);
+//     const medias = await mediaApi.getMediaByUserId(user._id);
+//     const comments = medias.map(async(singleMedia) => {
+//     return await commentsApi.getCommectByMediaId(singleMedia._id);
+//     })
+//         res.render('media/media', {user, media, comments})
+
 mediaRouter.get('/new', (req, res) => {
     userApi.getUser(req.params.userId)
         .then((user) => {
