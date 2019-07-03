@@ -81,20 +81,21 @@ mediaRouter.put('/:mediaId', (req, res) => {
         mediaApi.updateMedia(req.params.mediaId, req.body)
             .then(() => {
                 res.redirect(`/users/${req.params.userId}/media`)
-    })
-    .catch ((err) => {
-      res.send(err)
-    })
+            })
+            .catch ((err) => {
+                res.send(err)
+            })
 })
 
 mediaRouter.delete('/:mediaId', (req, res) => {
-  mediaApi.deleteMedia(req.params.mediaId)
-    .then(() => {
-      res.redirect('/media')
-    })
-    .catch ((err) => {
-      res.send(err)
-    })
+    req.body.userId = req.params.userId
+        mediaApi.deleteMedia(req.params.mediaId)
+            .then(() => {
+                res.redirect(`/users/${req.params.userId}/media`)
+            })
+            .catch ((err) => {
+                res.send(err)
+            })
 })
 
 module.exports = {
