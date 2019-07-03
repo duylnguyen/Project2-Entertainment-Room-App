@@ -15,10 +15,24 @@ const mediaRouter = express.Router({mergeParams: true})
 //         })
 // })
 
+// mediaRouter.get('/', (req, res) => {
+//     userApi.getUser(req.params.userId)
+//         .then((user) => {
+//             mediaApi.getAllMedia(req.params.mediaId)
+//                 .then((media) => {
+//                     res.render('media/media', {user, media})
+//                 })
+//                 .catch ((err) => {
+//                     res.send(err)
+//                 })  
+//         })
+        
+// })
+
 mediaRouter.get('/', (req, res) => {
     userApi.getUser(req.params.userId)
         .then((user) => {
-            mediaApi.getAllMedia(req.params.mediaId)
+            mediaApi.getMediaByUserId(user._id)
                 .then((media) => {
                     res.render('media/media', {user, media})
                 })
