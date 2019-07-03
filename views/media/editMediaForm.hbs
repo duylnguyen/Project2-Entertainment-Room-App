@@ -1,0 +1,25 @@
+<h2>Edit Review Form</h2>
+
+<form method="POST" action="/media/{{media._id}}?_method=PUT">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Type of media</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type of media" name="type" value="{{media.type}}" />
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Title</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Title "name="title" value="{{media.title}}" />
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Rating</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rating" name="rating" value="{{media.rating}}" />
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Review</label>
+    <textarea type="text" class="form-control" id="formGroupExampleInput2" placeholder="Review" name="review" value="{{media.review}}"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Image Link</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Image Link" name="imgLink" id="img-link" value="{{media.imgLink}}"/>
+  </div>
+  <input id="submitBtn" type="submit" value="Edit Review" />
+</form>

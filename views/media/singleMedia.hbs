@@ -20,8 +20,8 @@
     <img src="{{media.imgLink}}" alt="Image of {{movie.title}}">
 </div>
 
-<a href="/medias/{{media._id}}/edit">Edit media post</a>
+<a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
 
-<form action="/medias/{{media._id}}?_method=DELETE" method="post">
+<form action="/media/{{media._id}}?_method=DELETE" method="post">
     <input type="submit" value="Delete Media">
 </form>
