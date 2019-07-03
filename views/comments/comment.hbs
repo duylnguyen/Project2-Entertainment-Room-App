@@ -2,8 +2,8 @@
     <p>Comment: {{comment.comment}}</p>
 </div>
 
-<a href="/comments/{{comment._id}}/edit">Edit Comment Post</a>
+<a href="/media/{{media._id}}/comments/{{comment._id}}/edit">Edit Comment Post</a>
 
-<form action="/comments/{{comment._id}}?_method=DELETE" method="post">
+<form action="/media/{{media._id}}/comments/{{comment._id}}?_method=DELETE" method="post">
     <input type="submit" value="Delete Comment">
 </form>

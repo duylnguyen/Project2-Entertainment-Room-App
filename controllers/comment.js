@@ -53,33 +53,38 @@ commentRouter.get('/:commentId', (req, res) => {
 })
 
 commentRouter.get('/:commentId/edit', (req, res) => {
-    commentApi.getComment(req.params.commentId)
-        .then((comment) => {
-            res.render('comments/editCommentForm', {comment})
-        })
+    mediaApi.getMedia(req.params.mediaId)
+        .then((media) => {
+            commentApi.getComment(req.params.commentId)
+                .then((comment) => {
+                    res.render('comments/editCommentForm', {media, comment})
+                })
+        })  
         .catch ((err) => {
             res.send(err)
         })
 })
 
 commentRouter.put('/:commentId', (req, res) => {
-    commentApi.updateComment(req.params.commentId, req.body)
-        .then(() => {
-            res.redirect('/comments')
-        })
-        .catch ((err) => {
+    req.body.mediaId = req.params.mediaId
+        commentApi.updateComment(req.params.commentId, req.body)
+            .then(() => {
+                res.redirect(`/media/${req.params.mediaId}/comments`)
+            })
+            .catch ((err) => {
             res.send(err)
-        })
+            })
 })
 
 commentRouter.delete('/:commentId', (req, res) => {
-    commentApi.deleteComment(req.params.commentId)
-        .then(() => {
-            res.redirect('/comments')
-        })
-        .catch ((err) => {
-            res.send(err)
-        })
+    req.body.mediaId = req.params.mediaId
+        commentApi.deleteComment(req.params.commentId)
+            .then(() => {
+                res.redirect(`/media/${req.params.mediaId}/comments`)
+            })
+            .catch ((err) => {
+                res.send(err)
+            })
 })
 
 module.exports = {
