@@ -1,8 +1,6 @@
 const express = require('express')
-
 const mediaApi = require('../models/media.js')
 const userApi = require('../models/user.js')
-
 const mediaRouter = express.Router({mergeParams: true})
 
 // mediaRouter.get('/', (req, res) => {   
@@ -48,6 +46,34 @@ mediaRouter.get('/', (req, res) => {
             res.send(err)
         }) 
 })
+
+mediaRouter.get('/movies', (req, res) => {
+    userApi.getUser(req.params.userId)
+        .then((user) => {
+            mediaApi.getMediaByType('Movie') 
+                .then((media) => { 
+                    res.render('media/movies', {user, media})
+                })  
+        })
+        .catch ((err) => {
+            res.send(err)
+        }) 
+})
+
+mediaRouter.get('/musics', (req, res) => {
+    userApi.getUser(req.params.userId)
+        .then((user) => {
+            mediaApi.getMediaByType('Music') 
+                .then((media) => { 
+                    res.render('media/musics', {user, media})
+                })  
+        })
+        .catch ((err) => {
+            res.send(err)
+        }) 
+})
+
+
 
 // mediaRouter.get('/', async(req, res) => {
 //     const user = await userApi.getUser(req.params.userId);

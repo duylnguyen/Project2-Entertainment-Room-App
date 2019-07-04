@@ -1,24 +1,14 @@
 
-<h2>User Name: {{user.userName}}</h2>
+<h2>Posted by: {{user.userName}}</h2>
 
-<div>
+{{!-- <div>
     <p>First Name: {{user.firstName}}</p>
     <p>Last Name: {{user.lastName}}</p>
     <p>Account created at: {{user.createdDate}}</p>
     <p>user ID: {{media.userId}}</p>
-</div>
+</div> --}}
 
 <h2>Media Content</h2>
-
-{{!-- <div>
-    <p>media id : {{media._id}}</p>
-    <p>Type of media: {{media.type}}</p>
-    <p>Title: {{media.title}}</p>
-    <p>Rating: {{media.rating}}</p>
-    <p>Review: {{media.review}}</p>
-    <p>{{media.userId}}</p>
-    <img src="{{media.imgLink}}" alt="Image of {{movie.title}}">
-</div> --}}
 
 <div class="media">
     <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
@@ -31,7 +21,7 @@
 </div>
 
     <div class="comment">
-        <button><a href="/media/{{media._id}}/comments">Views Comments</a></button>
+        <button><a href="/media/{{media._id}}/comments/{{comment._id}}">Views Comments</a></button>
     </div>
 
 <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>

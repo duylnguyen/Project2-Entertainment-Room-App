@@ -57,11 +57,16 @@ function getMediaByUserId(userId) {
     return MediaCollection.find({userId: userId})
 }
 
+function getMediaByType(mediaType) {
+  return MediaCollection.find({type: mediaType})
+}
+
 module.exports = {
   getAllMedia,
   addMedia,
   getMedia,
   updateMedia,
   deleteMedia,
-  getMediaByUserId
+  getMediaByUserId,
+  getMediaByType
 }

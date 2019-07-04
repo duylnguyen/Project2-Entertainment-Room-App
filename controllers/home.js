@@ -8,13 +8,12 @@ homeRouter.get('/', (req, res) => {
         .then((user) => {
             mediaApi.getAllMedia(req.params.mediaId)
                 .then((media) => {
-                    res.render('media/media', {user, media})
+                    res.render('media/allMedia', {user, media})
                 })
                 .catch ((err) => {
                     res.send(err)
                 })  
-        })
-        
+        })      
 })
 
 module.exports = {

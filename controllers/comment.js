@@ -1,8 +1,6 @@
 const express = require('express')
-
 const commentApi = require('../models/comment.js')
 const mediaApi = require('../models/media.js')
-
 const commentRouter = express.Router({mergeParams: true})
 
 commentRouter.get('/', (req, res) => {
