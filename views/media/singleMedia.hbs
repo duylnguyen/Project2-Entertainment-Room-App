@@ -20,12 +20,13 @@
         <h3>Title: {{media.title}}</h3>
         <p>Type: {{media.type}}</p>
         <p>Rating: {{media.rating}}</p>
+        <p>Posted at: {{media.postedAt}}</p>
         <p>Posted by: {{user.userName}}</p>
     </div>
 </div>
 
     <div class="comment">
-        <button><a href="/media/{{media._id}}/comments/{{comment._id}}">Read Review</a></button>
+        <button><a href="/media/{{media._id}}/comments/{{comment._id}}">View Comments</a></button>
     </div>
 
 <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
