@@ -19,6 +19,10 @@ const MediaSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  postedBy: {
+    type: Date,
+    default: Date.now
+  },
   userId: {
       type: mongoose.Types.ObjectId
   },
