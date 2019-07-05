@@ -1,12 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/media">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/users/new">Create New Account</a>
+    </div>
+  </div>
+</nav>
 
+<h1>All Users Accounts</h1>
 
-<h1>All Users</h1>
-
-{{#each users}}
-        <div class"content">
+        {{!-- <div class"content">
             <p>Username:<a href="/users/{{_id}}/media/"> {{userName}}</a></p>
             <p>First Name: {{firstName}}</p>
             <p>Last Name: {{lastName}}</p>
             <p>Account created at: {{createdDate}}</p>
-        </div>
+        </div> --}}
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col" class="userName">User Name</th>
+      <th scope="col" class="firstName">First</th>
+      <th scope="col" class="lastName">Last</th>
+      <th scope="col" class="createDate">Account Created At</th>
+      <th scope="col" class="post">User Posted</th>
+    </tr>
+  </thead>
+{{#each users}}
+  <tbody>
+    <tr>
+      <th scope="row">{{userName}}</th>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+      <td>{{createdDate}}</td>
+      <td><a href="/users/{{_id}}/media/">Views {{userName}} posted</a></td>
+    </tr>
+  </tbody>
 {{/each}}
+</table>

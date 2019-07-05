@@ -3,37 +3,6 @@ const mediaApi = require('../models/media.js')
 const userApi = require('../models/user.js')
 const mediaRouter = express.Router({mergeParams: true})
 
-// mediaRouter.get('/', (req, res) => {   
-//     mediaApi.getAllMedia(req.params.mediaId)
-//         .then((media) => {
-//             res.render('media/media', {userId: req.params.userId, media})
-//         })
-//         .catch ((err) => {
-//             res.send(err)
-//         })
-// })
-
-// mediaRouter.get('/', (req, res) => {
-//     userApi.getUser(req.params.userId)
-//         .then((user) => {
-//             mediaApi.getAllMedia(req.params.mediaId)
-//                 .then((media) => {
-//                     res.render('media/media', {user, media})
-//                 })
-//                 .catch ((err) => {
-//                     res.send(err)
-//                 })  
-//         })
-        
-// })
-
-// mediaRouter.get('/', (req, res) => {
-//     mediaApi.getAllMedia(req.params.mediaId)
-//         .then((media) => {
-//             res.render('media/media', {media})
-//         })
-// })
-
 mediaRouter.get('/', (req, res) => {
     userApi.getUser(req.params.userId)
         .then((user) => {
@@ -73,7 +42,18 @@ mediaRouter.get('/musics', (req, res) => {
         }) 
 })
 
-
+mediaRouter.get('/books', (req, res) => {
+    userApi.getUser(req.params.userId)
+        .then((user) => {
+            mediaApi.getMediaByType('Book') 
+                .then((media) => { 
+                    res.render('media/books', {user, media})
+                })  
+        })
+        .catch ((err) => {
+            res.send(err)
+        }) 
+})
 
 // mediaRouter.get('/', async(req, res) => {
 //     const user = await userApi.getUser(req.params.userId);
@@ -82,6 +62,19 @@ mediaRouter.get('/musics', (req, res) => {
 //     return await commentsApi.getCommectByMediaId(singleMedia._id);
 //     })
 //         res.render('media/media', {user, media, comments})
+
+mediaRouter.get('/', (req, res) => {
+    userApi.getUser(req.params.userId)
+        .then((user) => {
+            mediaApi.getAllMedia(req.params.mediaId)
+                .then((media) => {
+                    res.render('media/home', {user, media})
+                })
+                .catch ((err) => {
+                    res.send(err)
+                })  
+        })      
+})
 
 mediaRouter.get('/new', (req, res) => {
     userApi.getUser(req.params.userId)

@@ -32,8 +32,10 @@ app.use('/media', homeRouter)
 app.use('/users', userRouter)
 app.use('/media/:mediaId/comments', commentRouter)
 app.use('/users/:userId/media', mediaRouter)
-app.use('/users/:userId/media/movies', mediaRouter)
-app.use('/users/:userId/media/musics', mediaRouter)
+// app.use('/users/:userId/media/home', mediaRouter)
+// app.use('/users/:userId/media/movies', mediaRouter)
+// app.use('/users/:userId/media/musics', mediaRouter)
+// app.use('/users/:userId/media/books', mediaRouter)
 
 
 // Set the port the server is to run on

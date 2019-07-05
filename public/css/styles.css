@@ -45,6 +45,17 @@ h1, h2 {
     margin-right: 20%;
 }
 
+.table {
+    width: 70%;
+    margin: 0 auto;
+}
 
+.userName {
+    width: 180px;
+}
+
+.createDate {
+    width: 200px;
+}
 
 

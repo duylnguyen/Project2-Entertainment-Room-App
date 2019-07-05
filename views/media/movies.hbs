@@ -2,9 +2,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/media">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="users/{{user._id}}/media/movies">Movies</a>
-      <a class="nav-item nav-link" href="#">Musics</a>
-      <a class="nav-item nav-link" href="#">Books</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/movies">Movies</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/musics">Musics</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/books">Books</a>
       <a class="nav-item nav-link" href="/users">User Page</a>
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/new">Post New Review</a>
       <a class="nav-item nav-link" href="/users/new">Create New Account</a>
@@ -12,16 +12,16 @@
   </div>
 </nav>
 
-<h1>Media Reviews</h1>
+<h1>Movies Review</h1>
 
 {{#each media}}
     <div class="media">
         <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
         <div class"content">
-            <h3>Title:<a href="/users/{{userId}}/media/{{_id}}"> {{title}}</a></h3>
+            <h3>Title: {{title}}</h3>
             <p>Type: {{type}}</p>
             <p>Rating: {{rating}}</p>
-            <p>Review: {{review}}</p>
+            <button><a href="/users/{{userId}}/media/{{_id}}">Read Review</a></button>
         </div>
     </div>
 {{/each}}

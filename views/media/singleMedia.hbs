@@ -1,27 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/media">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/movies">Movies</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/musics">Musics</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/books">Books</a>
+      <a class="nav-item nav-link" href="/users">User Page</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/new">Post New Review</a>
+      <a class="nav-item nav-link" href="/users/new">Create New Account</a>
+    </div>
+  </div>
+</nav>
 
-<h2>Posted by: {{user.userName}}</h2>
-
-{{!-- <div>
-    <p>First Name: {{user.firstName}}</p>
-    <p>Last Name: {{user.lastName}}</p>
-    <p>Account created at: {{user.createdDate}}</p>
-    <p>user ID: {{media.userId}}</p>
-</div> --}}
-
-<h2>Media Content</h2>
+<h2>All Posted By {{user.userName}}</h2>
 
 <div class="media">
-    <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
+    <img class="img" src="{{imgLink}}" alt="Image of {{media.title}}">
     <div class"content">
         <h3>Title: {{media.title}}</h3>
         <p>Type: {{media.type}}</p>
         <p>Rating: {{media.rating}}</p>
-        <p>Review: {{media.review}}</p>
+        <p>Posted by: {{user.userName}}</p>
     </div>
 </div>
 
     <div class="comment">
-        <button><a href="/media/{{media._id}}/comments/{{comment._id}}">Views Comments</a></button>
+        <button><a href="/media/{{media._id}}/comments/{{comment._id}}">Read Review</a></button>
     </div>
 
 <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>

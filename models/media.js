@@ -20,10 +20,9 @@ const MediaSchema = new mongoose.Schema({
     required: true
   },
   userId: {
-    type: mongoose.Types.ObjectId,
-    // required: true
+      type: mongoose.Types.ObjectId
   },
-  imgLink: String,
+  imgLink: String
 })
 
 const MediaCollection = mongoose.model('Media', MediaSchema)

@@ -39,10 +39,7 @@ userRouter.post('/', (req, res) => {
 userRouter.get('/:userId', (req, res) => {
     userApi.getUser(req.params.userId)
         .then((user) => {
-            // mediaApi.getMediaByUserId(user._id)
-            //     .then((media) => {
-                    res.render('users/user', {user: user})
-                // })
+            res.render('users/user', {user: user})
         })
         .catch((err) => {
             res.send(err)
