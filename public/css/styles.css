@@ -20,7 +20,7 @@ h1, h2 {
     flex-direction: row;
     background-color: #fff;
     width: 70%;
-    height: 190px;
+    height: 193px;
     margin: 15px auto;
 }
 
@@ -104,6 +104,12 @@ a:link {
     margin-right: 15%;
     margin-bottom: 20px;
     float: right;
+}
+
+.allMediaBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
