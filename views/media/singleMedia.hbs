@@ -12,22 +12,30 @@
   </div>
 </nav>
 
-<h2>All Posted By {{user.userName}}</h2>
+<h2>{{media.title}}</h2>
 
-<div class="media">
-    <img class="img" src="{{imgLink}}" alt="Image of {{media.title}}">
-    <div class"content">
-        <h3>Title: {{media.title}}</h3>
-        <p>Type: {{media.type}}</p>
-        <p>Rating: {{media.rating}}</p>
-        <p>Posted at: {{media.postedAt}}</p>
-        <p>Posted by: {{user.userName}}</p>
-    </div>
+    <div class="container">
+        <div class"title">
+            <img class="img" src="{{media.imgLink}}" alt="Image of {{media.title}}" /></br>
+        </div>
+
+        <div class="wrapper">
+            <div class="info">
+                <p>Type: {{media.type}}</p>
+                <p>Rating: {{media.rating}}</p>
+                <p>Posted {{media.posted}}</p>
+                <p>Posted by: {{user.userName}}</p>
+            </div>
+            <div class="review">
+                <h3>Reviews</h3>
+                <p>{{media.review}}</p>
+            </div>
+        </div>
+    </div>  
+
+<div class="comment">
+    <button><a href="/media/{{media._id}}/comments/{{comment._id}}">View Comments</a></button>
 </div>
-
-    <div class="comment">
-        <button><a href="/media/{{media._id}}/comments/{{comment._id}}">View Comments</a></button>
-    </div>
 
 <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
 

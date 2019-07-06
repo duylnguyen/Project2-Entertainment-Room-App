@@ -19,7 +19,7 @@ const MediaSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  postedAt: {
+  posted: {
     type: Date,
     default: Date.now
   },
