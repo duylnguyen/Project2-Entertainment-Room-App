@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/media">Home <span class="sr-only">(current)</span></a>
@@ -6,9 +6,15 @@
       <a class="nav-item nav-link" href="/users/new">Create New Account</a>
     </div>
   </div>
+</nav> --}}
+
+<nav class="navbar fixed-top navbar-light bg-light">
+  <a class="navbar-brand" href="/media">Home</a>
+  <a class="navbar-brand" href="/users">User Page</a>
+  <a class="navbar-brand" href="/users/new">Create New Account</a>
 </nav>
 
-<h1>Recent Posted</h1>
+<h1 class="mainPage">Recent Posted</h1>
 
 {{#each media}}
     <div class="media">
@@ -22,3 +28,4 @@
         </div>
     </div>
 {{/each}}
+

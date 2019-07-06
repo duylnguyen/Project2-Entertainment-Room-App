@@ -164,6 +164,15 @@ a:link {
     justify-content: space-between;
 }
 
+#submitBtn {
+    margin-bottom: 20px;
+}
 
+.fixed-top {
+    display: flex;
+    justify-content: flex-start;
+}
 
-
+.mainPage {
+    margin-top: 70px;
+}
