@@ -76,7 +76,34 @@ h1, h2 {
 .title, img {
     width: 100%;
     object-fit: cover;
-    height: 350px;
+    /* height: 400px; */
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    border-top: solid 1px;
+    border-color: #505961;
+    padding-top: 20px;
+}
+
+.info {
+    width: 20%;
+}
+
+.review {
+    width: 80%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.viewBtn {
+    margin-top: 20px;
+    margin-right: 15%;
+    margin-bottom: 20px;
+    float: right;
 }
 
 

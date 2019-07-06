@@ -19,9 +19,15 @@
         <div class"content">
             <h3>Title: {{title}}</h3>
             <p>Type: {{type}}</p>
-            <p>Rating: {{rating}}</p>
+            <p>Rating: {{rating}}/5</p>
             <p>Posted {{posted}}</p>
             <button class="reviewBtn"><a href="/users/{{userId}}/media/{{_id}}">Read Review</a></button>
         </div>
     </div>
+    <a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
+
+<form action="/users/{{user._id}}/media/{{media._id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete Media">
+</form>
 {{/each}}
+

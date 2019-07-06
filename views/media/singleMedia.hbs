@@ -22,7 +22,7 @@
         <div class="wrapper">
             <div class="info">
                 <p>Type: {{media.type}}</p>
-                <p>Rating: {{media.rating}}</p>
+                <p>Rating: {{media.rating}}/5</p>
                 <p>Posted {{media.posted}}</p>
                 <p>Posted by: {{user.userName}}</p>
             </div>
@@ -31,16 +31,14 @@
                 <p>{{media.review}}</p>
             </div>
         </div>
-    </div>  
+    </div> 
 
-<div class="comment">
-    <button><a href="/media/{{media._id}}/comments/{{comment._id}}">View Comments</a></button>
+{{!-- <button type="button" class="btn btn-outline-secondary">Secondary</button>  --}}
+
+<div class="viewBtn">
+    <button type="button" class="btn btn-outline-secondary"><a href="/media/{{media._id}}/comments/{{comment._id}}">View Comments</a></button>
 </div>
 
-<a href="/users/{{user._id}}/media/{{media._id}}/edit">Edit media post</a>
 
-<form action="/users/{{user._id}}/media/{{media._id}}?_method=DELETE" method="post">
-    <input type="submit" value="Delete Media">
-</form>
 
     
