@@ -54,6 +54,18 @@ h1, h2 {
     height: 193px;
     margin: 15px auto;
 }
+.input-group {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#deleteComment {
+    margin-left: 15%;
+}
+
+#editComment {
+    float: right;
+}
 
 .postCommentBtn {
     float: right;
