@@ -1,3 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/media">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/movies">Movies</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/musics">Musics</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/books">Books</a>
+      <a class="nav-item nav-link" href="/users">User Page</a>
+      <a class="nav-item nav-link" href="/users/new">Create New Account</a>
+    </div>
+  </div>
+</nav>
+
 <div class="media">
     <img class="img" src="{{media.imgLink}}" alt="Image of {{media.title}}">
     <div class"content">

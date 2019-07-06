@@ -45,5 +45,6 @@ module.exports = {
     addComment,
     getComment,
     updateComment,
-    deleteComment
+    deleteComment,
+    getCommentByMedia
 }

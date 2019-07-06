@@ -6,7 +6,7 @@ const commentRouter = express.Router({mergeParams: true})
 commentRouter.get('/', (req, res) => {
     mediaApi.getMedia(req.params.mediaId)
         .then((media) => {
-            commentApi.getAllComments()
+            commentApi.getCommentByMedia(media._id)
                 .then((comments) => {
                     res.render('comments/comments', {media, comments})
                 }) 
