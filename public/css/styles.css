@@ -54,7 +54,12 @@ h1, h2 {
     height: 193px;
     margin: 15px auto;
 }
-.input-group {
+/* .input-group {
+    width: 70%;
+    margin: 0 auto;
+} */
+
+#input {
     width: 70%;
     margin: 0 auto;
 }

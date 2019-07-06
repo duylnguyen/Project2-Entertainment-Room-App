@@ -16,7 +16,12 @@
 
     <div class="container">
         <div class"title">
-            <img class="img" src="{{media.imgLink}}" alt="Image of {{media.title}}" /></br>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="870" height="489" src="{{media.videoLink}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {{!-- <iframe width="870" height="489" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
+                {{!-- <iframe class="embed-responsive-item" src="{{media.imgLink}}" allowfullscreen></iframe> --}}
+            </div>
+            {{!-- <img class="img" src="{{media.imgLink}}" alt="Image of {{media.title}}" /></br> --}}
         </div>
 
         <div class="wrapper">
@@ -38,7 +43,6 @@
 <div class="viewBtn">
     <button type="button" class="btn btn-outline-secondary"><a href="/media/{{media._id}}/comments/{{comment._id}}">View Comments</a></button>
 </div>
-
 
 
     

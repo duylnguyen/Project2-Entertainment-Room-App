@@ -26,7 +26,8 @@ const MediaSchema = new mongoose.Schema({
   userId: {
       type: mongoose.Types.ObjectId
   },
-  imgLink: String
+  imgLink: String,
+  videoLink: String
 })
 
 const MediaCollection = mongoose.model('Media', MediaSchema)
