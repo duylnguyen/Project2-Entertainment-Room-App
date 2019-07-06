@@ -59,6 +59,16 @@ h1, h2 {
     margin: 0 auto;
 }
 
+.reply {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+#replyInput {
+    width: 700px;
+}
+
 #deleteComment {
     margin-left: 15%;
 }

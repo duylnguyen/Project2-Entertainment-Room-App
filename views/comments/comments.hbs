@@ -38,15 +38,23 @@
         </div>
         <div class="comment">
             <p>{{comment}}</p>
-            <a href="/media/{{mediaId}}/comments/{{_id}}">Reply</a>
-            <a id="editComment" href="/media/{{mediaId}}/comments/{{_id}}/edit">Edit Comment</a>
+            <div class="reply">
+                <form id="replyInput" method="POST" action="/media/{{mediaId}}/comments">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Reply..." name="comment" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" id="submitBtn" type="submit">Reply</button>
+                        </div>
+                    </div>
+                </form>
+                <a id="editComment" href="/media/{{mediaId}}/comments/{{_id}}/edit">Edit Comment</a>
+            </div>
         </div>
     </div>
     
         <form  action="/media/{{mediaId}}/comments/{{_id}}?_method=DELETE" method="post">
             <input id="deleteComment" type="submit" value="Delete Comment">
         </form>
-    
 {{/each}}
 
 
