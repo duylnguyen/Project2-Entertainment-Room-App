@@ -1,24 +1,26 @@
 <div class="media">
-    <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
+    <img class="img" src="{{media.imgLink}}" alt="Image of {{media.title}}">
     <div class"content">
-        <h3>Title: {{media.title}}</h3>
+        <h3>{{media.title}}</h3>
         <p>Type: {{media.type}}</p>
         <p>Rating: {{media.rating}}</p>
-        <p>Review: {{media.review}}</p>
+        <p>Posted {{media.posted}}</p>
     </div>
 </div>
 
-
-{{#each comments}}
-        <div class"content">
-            <p>Comment: {{comment}}</p>
+    {{#each comments}}
+        <div class="commentsBox">    
+            <div class="userPost">
+                <p>Posted By Anonymous User</p>
+                <p>{{posted}}</p>
+            </div>
+            <div class="comment">
+                <p>{{comment}}</p>
+                <a href="/media/{{mediaId}}/comments/{{_id}}">Reply</a>
+            </div>
         </div>
-        <div class="comment">
-            <button><a href="/media/{{mediaId}}/comments/{{_id}}">Reply</a></button>
-        </div>
+    {{/each}}
 
-{{/each}}
-
-<div class="comment">
-        <button><a href="/media/{{media._id}}/comments/new">Post A Comment</a></button>
-    </div>
+<div class="postCommentBtn">
+    <button><a href="/media/{{media._id}}/comments/new">Post A Comment</a></button>
+</div>

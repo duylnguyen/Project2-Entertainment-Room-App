@@ -5,6 +5,10 @@ const CommentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    posted: {
+        type: Date,
+        default: Date.now
+    },
     mediaId: {
         type: mongoose.Types.ObjectId
     }

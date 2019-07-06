@@ -32,8 +32,32 @@ h1, h2 {
     object-fit: cover;
 }
 
+.commentsBox {
+    width: 70%;
+    margin: 15px auto;
+    border: solid 1px #505961;
+}
+
+.userPost {
+    margin: 15px 10px;
+    border-bottom: solid 1px #505961;
+    padding-bottom: 5px;
+}
+
 .comment {
-    margin-left: 15%;
+    margin: 10px 20px; 
+}
+
+.comments {
+    background-color: #fff;
+    width: 70%;
+    height: 193px;
+    margin: 15px auto;
+}
+
+.postCommentBtn {
+    float: right;
+    margin-right: 15%;
 }
 
 .form-group {
