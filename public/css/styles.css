@@ -27,7 +27,8 @@ h1, h2 {
 .movie img, .media img {
     float: left;
     margin-right: 20px;
-    width: 29%;
+    max-width: 29%;
+    max-height: 100%;
     object-fit: cover;
 }
 

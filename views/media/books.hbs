@@ -6,7 +6,7 @@
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/musics">Musics</a>
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/books">Books</a>
       <a class="nav-item nav-link" href="/users">User Page</a>
-      <a class="nav-item nav-link" href="/users/{{user._id}}/media/new">Post New Review</a>
+      {{!-- <a class="nav-item nav-link" href="/users/{{user._id}}/media/new">Post New Review</a> --}}
       <a class="nav-item nav-link" href="/users/new">Create New Account</a>
     </div>
   </div>
@@ -18,9 +18,10 @@
     <div class="media">
         <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
         <div class"content">
-            <h3>Title: {{title}}</h3>
+            <h3>{{title}}</h3>
             <p>Type: {{type}}</p>
             <p>Rating: {{rating}}</p>
+            <p>Posted {{posted}}</p>
             <button><a href="/users/{{userId}}/media/{{_id}}">Read Review</a></button>
         </div>
     </div>

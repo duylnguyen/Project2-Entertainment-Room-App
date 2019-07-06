@@ -5,6 +5,7 @@
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/movies">Movies</a>
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/musics">Musics</a>
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/books">Books</a>
+      <a class="nav-item nav-link" href="/users/{{user._id}}/media/new">Post New Review</a>
       <a class="nav-item nav-link" href="/users">User Page</a>
       <a class="nav-item nav-link" href="/users/new">Create New Account</a>
     </div>
@@ -17,7 +18,7 @@
     <div class="media">
         <img class="img" src="{{imgLink}}" alt="Image of {{title}}">
         <div class"content">
-          <h3>Title: {{title}}</h3>
+          <h3>{{title}}</h3>
           <p>Type: {{type}}</p>
           <p>Rating: {{rating}}/5</p>
           <p>Posted {{posted}}</p>
@@ -27,15 +28,12 @@
                 <button type="button"><a href="/users/{{userId}}/media/{{_id}}/edit">Edit media post</a></button>
               </div>
               <div class="Btn-2">
-                <form action="/users/{{user._id}}/media/{{media._id}}?_method=DELETE" method="post">
+                <form action="/users/{{userId}}/media/{{_id}}?_method=DELETE" method="post">
                   <input type="submit" value="Delete Media">
                 </form>
               </div>
             </div>
         </div>
     </div>
-  
-      
-    
 {{/each}}
 
