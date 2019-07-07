@@ -176,3 +176,15 @@ a:link {
 .mainPage {
     margin-top: 70px;
 }
+
+.intro {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.note {
+    margin: 30px auto;
+    text-align: center;
+    font-weight: 700;
+    color: red;
+}
