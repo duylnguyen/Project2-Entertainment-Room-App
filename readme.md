@@ -13,9 +13,9 @@ For project #2, I choose to create a simple fullstack app for user to post their
 
 ## Links
 - Project Planning:
-<a href="https://trello.com/b/O6zDNUPA/entertainment-room">Trello</a>
+<a href="https://trello.com/b/O6zDNUPA/entertainment-room" target="_blank">Trello</a>
 - Project Hosted Address:
-<a href="https://lit-chamber-33132.herokuapp.com/media">Heroku</a>
+<a href="https://lit-chamber-33132.herokuapp.com/media" target="_blank">Heroku</a>
 
 ## Features
 3 models                3 controllers
