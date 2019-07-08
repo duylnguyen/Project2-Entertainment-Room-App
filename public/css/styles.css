@@ -80,6 +80,7 @@ h1, h2 {
 
 #editComment {
     float: right;
+    padding: 0 auto;
 }
 
 .postCommentBtn {
@@ -98,7 +99,7 @@ h1, h2 {
 }
 
 .table {
-    width: 70%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -115,7 +116,7 @@ h1, h2 {
 }
 
 .post {
-    width: 170px;
+    width: 190px;
 }
 
 .reviewBtn {
