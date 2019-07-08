@@ -197,3 +197,16 @@ a:link {
     font-weight: 700;
     color: red;
 }
+
+.reviewPostBtn {
+    margin-left: 15%;
+    height: 40px;
+}
+
+.reviewPostBtn:hover {
+    background-color: rosybrown;
+}
+
+#postBtn {
+    padding: 15px 0;
+}

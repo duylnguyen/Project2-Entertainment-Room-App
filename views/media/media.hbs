@@ -5,7 +5,6 @@
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/movies">Movies</a>
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/musics">Musics</a>
       <a class="nav-item nav-link" href="/users/{{user._id}}/media/books">Books</a>
-      <a class="nav-item nav-link" href="/users/{{user._id}}/media/new">Post New Review</a>
       <a class="nav-item nav-link" href="/users">User Page</a>
       <a class="nav-item nav-link" href="/users/new">Create New Account</a>
     </div>
@@ -13,6 +12,8 @@
 </nav>
 
 <h1>All Posted Of {{user.userName}}</h1>
+
+<button class="reviewPostBtn"><a id="postBtn" href="/users/{{user._id}}/media/new">Post New Review</a></button>
 
 {{#each media}}
     <div class="media">
