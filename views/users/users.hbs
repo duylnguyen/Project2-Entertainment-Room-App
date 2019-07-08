@@ -17,8 +17,8 @@
       <th scope="col" class="lastName">Last</th>
       <th scope="col" class="createDate">Account Created At</th>
       <th scope="col" class="post">User Posts</th>
-      <th scope="col" class="edit">Edit User Account</th>
-      <th scope="col" class="delete">Delete Account</th>
+      <th scope="col" class="edit">Edit</th>
+      <th scope="col" class="delete">Delete</th>
     </tr>
   </thead>
 {{#each users}}
@@ -29,7 +29,7 @@
       <td>{{lastName}}</td>
       <td>{{createdDate}}</td>
       <td><a href="/users/{{_id}}/media/">Views {{userName}} posts</a></td>
-      <td><a href="/users/{{_id}}/edit">Edit User Post</a></td>
+      <td><a href="/users/{{_id}}/edit">Edit User Info</a></td>
       <td>
           <form action="/users/{{_id}}?_method=DELETE" method="post">
             <input type="submit" value="Delete">

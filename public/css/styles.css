@@ -107,11 +107,15 @@ h1, h2 {
 }
 
 .edit {
-    width: 170px;
+    width: 140px;
 }
 
 .createDate {
-    width: 200px;
+    width: 295px;
+}
+
+.post {
+    width: 170px;
 }
 
 .reviewBtn {
