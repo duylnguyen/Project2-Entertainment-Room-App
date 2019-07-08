@@ -21,7 +21,8 @@ For project #2, I choose to create a simple fullstack app for users to post thei
 3 models:               
 - user model            
 - media model           
-- comment model         
+- comment model 
+
 3 controllers:   
 - user controller
 - media controller
@@ -39,5 +40,5 @@ For project #2, I choose to create a simple fullstack app for users to post thei
 ![alt text](./images/newuserform.png "Wireframe Image")
 ![alt text](./images/reviewpage.png "Wireframe Image")
 
-## Wireframe
+## ERD
 ![alt text](./images/ERD.png "Wireframe Image")
