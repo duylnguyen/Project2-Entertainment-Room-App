@@ -103,11 +103,15 @@ h1, h2 {
 }
 
 .userName {
-    width: 180px;
+    width: 120px;
+}
+
+.edit {
+    width: 170px;
 }
 
 .createDate {
-    width: 300px;
+    width: 200px;
 }
 
 .reviewBtn {
