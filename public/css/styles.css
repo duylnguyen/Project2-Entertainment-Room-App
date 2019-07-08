@@ -45,7 +45,13 @@ h1, h2 {
 }
 
 .comment {
-    margin: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    margin: 10px; 
+}
+
+.commentText {
+    margin-left: 15px;
 }
 
 .comments {
@@ -72,10 +78,6 @@ h1, h2 {
 
 #replyInput {
     width: 700px;
-}
-
-#deleteComment {
-    margin-left: 15%;
 }
 
 #editComment {
