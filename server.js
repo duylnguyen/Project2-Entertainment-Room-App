@@ -36,6 +36,9 @@ app.use('/users/:userId/media', mediaRouter)
 // app.use('/users/:userId/media/movies', mediaRouter)
 // app.use('/users/:userId/media/musics', mediaRouter)
 // app.use('/users/:userId/media/books', mediaRouter)
+app.get('/', (req, res) => {
+    res.redirect('/media')
+})
 
 
 // Set the port the server is to run on
