@@ -35,9 +35,10 @@
         <div class="userPost">
             <p>Posted By Anonymous User on   <span>  {{posted}}</span> </p>
         </div>
+        <p class="commentText">{{comment}}</p>
         <div class="comment">
-            <div class="commentText">
-                <p>{{comment}}</p>
+            <div class="editCommentText">
+                <button><a href="/media/{{mediaId}}/comments/{{_id}}/edit">Edit Comment Post</a></button>
             </div>
             <div class="deleteComment">
                 <form  action="/media/{{mediaId}}/comments/{{_id}}?_method=DELETE" method="post">
